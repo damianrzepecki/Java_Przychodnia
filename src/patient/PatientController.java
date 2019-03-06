@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PatientController {
-    public List<Patient> patients = new ArrayList<>();
+    private List<Patient> patients = new ArrayList<>();
     private int patient_ID = 0;
 
     public void newPatient(String patient_Name, String patient_Surname) {

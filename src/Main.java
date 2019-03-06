@@ -7,10 +7,12 @@ import patient.PatientController;
 public class Main {
     public static void main(String[] args) {
         CalendarController cC = new CalendarController();
-        cC.definehoursAday();
-        Reservation reservation = new Reservation();
-        // Dodanie nowego Doktora
+        PatientController pc = new PatientController();
         DoctorController dc = new DoctorController();
+        cC.definehoursAday();
+        // Dodanie nowego Doktora
+
+        Reservation reservation = new Reservation(dc,pc,cC);
         dc.newDoctor("Jan", "Kowalski");
         dc.newDoctor("Jan2", "Kowalski2");
         dc.newDoctor("Jan3", "Kowalski3");
@@ -27,7 +29,7 @@ public class Main {
         dc.showDoctors();
         System.out.println("=========================================================================");
         // Dodanie do dnia pracy doktorka godzin pracy
-        PatientController pc = new PatientController();
+
         pc.newPatient("Zenek", "Retet");
         pc.newPatient("Zenek2", "Retet2");
         pc.newPatient("Zenek3", "Retet3");
@@ -48,8 +50,8 @@ public class Main {
         dc.getAllDoctorsWorkingInThatDay(3);
         System.out.println("=========================================================================");
 //      Pacjent do Doktorka w Konretny dzień
-//        dc.addPatientToDay(0,0,25,3,2019);
-
+        dc.addPatientToDay(0,0,25,3,2019);
+        dc.getReservation();
         System.out.println("=========================================================================");
         reservation.addPatientToDay(0,0,25,3,2019);
     }
