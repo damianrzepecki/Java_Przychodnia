@@ -5,7 +5,7 @@ public class Patient {
     private String patient_Name;
     private String patient_Surname;
 
-    public int getPatient_ID() {
+    int getPatient_ID() {
         return patient_ID;
     }
 
@@ -13,7 +13,7 @@ public class Patient {
         this.patient_ID = patient_ID;
     }
 
-    public String getPatient_Name() {
+    String getPatient_Name() {
         return patient_Name;
     }
 
@@ -21,7 +21,7 @@ public class Patient {
         this.patient_Name = patient_Name;
     }
 
-    public String getPatient_Surname() {
+    String getPatient_Surname() {
         return patient_Surname;
     }
 
@@ -37,7 +37,8 @@ public class Patient {
                 ", patient_Surname='" + patient_Surname + '\'' +
                 '}';
     }
-    public Patient(int patient_ID, String patient_Name, String patient_Surname) {
+
+    Patient(int patient_ID, String patient_Name, String patient_Surname) {
         this.patient_ID = patient_ID;
         this.patient_Name = patient_Name;
         this.patient_Surname = patient_Surname;

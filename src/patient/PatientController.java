@@ -12,17 +12,25 @@ public class PatientController {
         patients.add(pat);
         patient_ID++;
     }
+
     public void showPatients() {
         for (Patient pat : patients) {
             System.out.println(pat);
         }
     }
-    public String getPatientData(int patient_id) {
+
+    private Patient getPatientData(int patient_id) {
         for (Patient pat : patients) {
             if (pat.getPatient_ID() == patient_id) {
-                return pat.toString();
+                return pat;
             }
         }
         return null;
+    }
+
+    public String addPatientToDoctor(int patient_id) {
+        Patient pat = getPatientData(patient_id);
+        assert pat != null;
+        return "Pacjęt: " + pat.getPatient_Name() + " " + pat.getPatient_Surname();
     }
 }
